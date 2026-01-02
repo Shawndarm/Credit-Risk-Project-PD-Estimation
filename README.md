@@ -28,21 +28,24 @@ Arborescence du projet
 - Python >= 3.12 (voir `.python-version`)
 - Dépendances déclarées dans `pyproject.toml`. Extraits principaux : `numpy`, `pandas`, `scikit-learn`, `statsmodels`, `scipy`, `plotly`, `seaborn`, `matplotlib`, `openpyxl`, `jinja2`, `nbformat`, `ruff`.
 
-Exemples d'installation :
+##### Exemples d'installation
 
-1. Créer un environnement virtuel
-   - python -m venv .venv
-   - source .venv/bin/activate  (macOS / Linux)
-   - .venv\Scripts\activate     (Windows)
+1. **Créer un environnement virtuel avec uv**
+```bash
+   uv venv
+```
 
-2. Installer les dépendances
-   - Option 1 (pip via pyproject) :
-     - pip install .
-   - Option 2 (installer les paquets listés) :
-     - pip install numpy pandas scikit-learn statsmodels scipy plotly seaborn matplotlib openpyxl jinja2 nbformat ruff
-
-Remarque : si vous souhaitez importer `src` comme package depuis la racine sans installer, ajoutez `PYTHONPATH=src` ou exécutez les scripts avec `python src/update_discretization.py`.
-
+2. **Installer les dépendances**
+   
+   - **Option 1 (via pyproject.toml)** :
+```bash
+     uv pip install .
+```
+   
+   - **Option 2 (installer les paquets listés)** :
+```bash
+     uv pip install numpy pandas scikit-learn statsmodels scipy plotly seaborn matplotlib openpyxl jinja2 nbformat ruff
+```
 
 ## Licence
 
