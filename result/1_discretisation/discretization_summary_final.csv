@@ -1,0 +1,8 @@
+Variable,Méthode,Bins,Chi²,P-value,Boundaries
+loan_percent_income,ChiMerge (fusion bins 0-1 et 4-5),4,6301.6700387608225,0.0,"0.15, 0.25, 0.30"
+loan_int_rate,ChiMerge,7,4229.357265242444,0.0,"6.17, 7.88, 10.74, 13.98, 14.79, 15.58"
+person_income,Monotone (fusion manuelle),6,2691.4137675360175,0.0,"28590.00, 35000.00, 55000.00, 63000.00, 86000.00"
+loan_amnt,Monotone (fusion bins 0-1),4,460.6710350814514,1.5890258163753108e-99,"12000.00, 14500.00, 19000.00"
+person_emp_length,KMeans (k=3),3,251.42985137040498,2.5275600479399805e-55,"4.41, 10.28"
+person_age,"KMeans (k=5, fusion 1-2)",4,31.979704123513766,5.285265000342196e-07,"25.47, 36.73, 47.13"
+cb_person_cred_hist_length,KMeans (k=3),3,14.92535656493056,0.0005741164644626994,"5.66, 11.72"

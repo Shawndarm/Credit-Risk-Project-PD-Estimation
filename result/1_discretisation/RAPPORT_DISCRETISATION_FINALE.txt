@@ -1,0 +1,530 @@
+====================================================================================================
+                         RAPPORT FINAL DE DISCRÉTISATION
+                    Méthodes Mixtes Optimales par Variable
+====================================================================================================
+
+Date de génération: 2025-11-30 23:44:21
+Dataset: credit_risk_dataset_post_prepocess.csv
+Nombre total d'observations: 32,572
+Taux de défaut global: 21.82%
+Nombre de variables discrétisées: 7
+
+====================================================================================================
+STRATÉGIE DE DISCRÉTISATION
+====================================================================================================
+
+  • loan_int_rate                       → ChiMerge
+  • loan_percent_income                 → ChiMerge
+  • person_income                       → Monotone
+  • loan_amnt                           → Monotone
+  • person_emp_length                   → ('KMeans', 3)
+  • person_age                          → ('KMeans', 5)
+  • cb_person_cred_hist_length          → ('KMeans', 3)
+
+====================================================================================================
+RÉSUMÉ GLOBAL
+====================================================================================================
+
+Chi² moyen: 1997.35
+Chi² médian: 460.67
+Chi² maximum: 6301.67 (loan_percent_income)
+Chi² minimum: 14.93 (cb_person_cred_hist_length)
+Nombre moyen de bins: 4.43
+
+Distribution des méthodes:
+  - KMeans (k=3): 2 variables
+  - ChiMerge (fusion bins 0-1 et 4-5): 1 variables
+  - ChiMerge: 1 variables
+  - Monotone (fusion manuelle): 1 variables
+  - Monotone (fusion bins 0-1): 1 variables
+  - KMeans (k=5, fusion 1-2): 1 variables
+
+====================================================================================================
+DÉTAILS PAR VARIABLE
+====================================================================================================
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: loan_int_rate
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: ChiMerge
+Nombre de bins: 7
+Nombre de boundaries: 6
+Chi-carré: 4229.36
+P-value: 0.00000000
+Significativité: *** Très hautement significatif (p < 0.001)
+
+Statistiques descriptives:
+  • Minimum: 5.4200
+  • Maximum: 23.2200
+  • Moyenne: 11.0094
+  • Médiane: 10.9900
+  • Écart-type: 3.0818
+
+Boundaries identifiées:
+  Boundary 1: 6.170000
+  Boundary 2: 7.880000
+  Boundary 3: 10.740000
+  Boundary 4: 13.980000
+  Boundary 5: 14.790000
+  Boundary 6: 15.580000
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [5.420000, 6.170000]
+    Nombre d'observations: 2,021 (6.20% du total)
+    Nombre de défauts: 126
+    Taux de défaut: 6.23%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+  BIN 1:
+    Intervalle: [6.170000, 7.880000]
+    Nombre d'observations: 5,162 (15.85% du total)
+    Nombre de défauts: 513
+    Taux de défaut: 9.94%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+  BIN 2:
+    Intervalle: [7.880000, 10.740000]
+    Nombre d'observations: 6,648 (20.41% du total)
+    Nombre de défauts: 987
+    Taux de défaut: 14.85%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+  BIN 3:
+    Intervalle: [10.740000, 13.980000]
+    Nombre d'observations: 13,026 (39.99% du total)
+    Nombre de défauts: 2,543
+    Taux de défaut: 19.52%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 4:
+    Intervalle: [13.980000, 14.790000]
+    Nombre d'observations: 1,815 (5.57% du total)
+    Nombre de défauts: 680
+    Taux de défaut: 37.47%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 5:
+    Intervalle: [14.790000, 15.580000]
+    Nombre d'observations: 1,298 (3.99% du total)
+    Nombre de défauts: 667
+    Taux de défaut: 51.39%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 6:
+    Intervalle: [15.580000, 23.220000]
+    Nombre d'observations: 2,602 (7.99% du total)
+    Nombre de défauts: 1,591
+    Taux de défaut: 61.15%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: loan_percent_income
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: ChiMerge (fusion bins 0-1 et 4-5)
+Nombre de bins: 4
+Nombre de boundaries: 3
+Chi-carré: 6301.67
+P-value: 0.00000000
+Significativité: *** Très hautement significatif (p < 0.001)
+
+Statistiques descriptives:
+  • Minimum: 0.0000
+  • Maximum: 0.8300
+  • Moyenne: 0.1702
+  • Médiane: 0.1500
+  • Écart-type: 0.1068
+
+Boundaries identifiées:
+  Boundary 1: 0.150000
+  Boundary 2: 0.250000
+  Boundary 3: 0.300000
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [0.000000, 0.150000]
+    Nombre d'observations: 17,185 (52.76% du total)
+    Nombre de défauts: 2,088
+    Taux de défaut: 12.15%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+  BIN 1:
+    Intervalle: [0.150000, 0.250000]
+    Nombre d'observations: 9,110 (27.97% du total)
+    Nombre de défauts: 1,696
+    Taux de défaut: 18.62%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 2:
+    Intervalle: [0.250000, 0.300000]
+    Nombre d'observations: 2,444 (7.50% du total)
+    Nombre de défauts: 628
+    Taux de défaut: 25.70%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 3:
+    Intervalle: [0.300000, 0.830000]
+    Nombre d'observations: 3,833 (11.77% du total)
+    Nombre de défauts: 2,695
+    Taux de défaut: 70.31%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: person_income
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: Monotone (fusion manuelle)
+Nombre de bins: 6
+Nombre de boundaries: 5
+Chi-carré: 2691.41
+P-value: 0.00000000
+Significativité: *** Très hautement significatif (p < 0.001)
+Monotonie: decreasing
+
+Statistiques descriptives:
+  • Minimum: 4000.0000
+  • Maximum: 1900000.0000
+  • Moyenne: 65819.1652
+  • Médiane: 55000.0000
+  • Écart-type: 51381.8234
+
+Boundaries identifiées:
+  Boundary 1: 28590.000000
+  Boundary 2: 35000.000000
+  Boundary 3: 55000.000000
+  Boundary 4: 63000.000000
+  Boundary 5: 86000.000000
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [4000.000000, 28590.000000]
+    Nombre d'observations: 3,259 (10.01% du total)
+    Nombre de défauts: 1,545
+    Taux de défaut: 47.41%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 1:
+    Intervalle: [28590.000000, 35000.000000]
+    Nombre d'observations: 3,370 (10.35% du total)
+    Nombre de défauts: 1,323
+    Taux de défaut: 39.26%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 2:
+    Intervalle: [35000.000000, 55000.000000]
+    Nombre d'observations: 9,753 (29.94% du total)
+    Nombre de défauts: 2,123
+    Taux de défaut: 21.77%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 3:
+    Intervalle: [55000.000000, 63000.000000]
+    Nombre d'observations: 3,189 (9.79% du total)
+    Nombre de défauts: 575
+    Taux de défaut: 18.03%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 4:
+    Intervalle: [63000.000000, 86000.000000]
+    Nombre d'observations: 6,513 (20.00% du total)
+    Nombre de défauts: 948
+    Taux de défaut: 14.56%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+  BIN 5:
+    Intervalle: [86000.000000, 1900000.000000]
+    Nombre d'observations: 6,488 (19.92% du total)
+    Nombre de défauts: 593
+    Taux de défaut: 9.14%
+    Niveau de risque: FAIBLE
+    Commentaire: Taux de défaut inférieur à la moyenne - Faible risque
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: loan_amnt
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: Monotone (fusion bins 0-1)
+Nombre de bins: 4
+Nombre de boundaries: 3
+Chi-carré: 460.67
+P-value: 0.00000000
+Significativité: *** Très hautement significatif (p < 0.001)
+Monotonie: increasing
+
+Statistiques descriptives:
+  • Minimum: 500.0000
+  • Maximum: 35000.0000
+  • Moyenne: 9588.1478
+  • Médiane: 8000.0000
+  • Écart-type: 6320.4173
+
+Boundaries identifiées:
+  Boundary 1: 12000.000000
+  Boundary 2: 14500.000000
+  Boundary 3: 19000.000000
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [500.000000, 12000.000000]
+    Nombre d'observations: 24,406 (74.93% du total)
+    Nombre de défauts: 4,681
+    Taux de défaut: 19.18%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 1:
+    Intervalle: [12000.000000, 14500.000000]
+    Nombre d'observations: 1,677 (5.15% du total)
+    Nombre de défauts: 420
+    Taux de défaut: 25.04%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 2:
+    Intervalle: [14500.000000, 19000.000000]
+    Nombre d'observations: 3,238 (9.94% du total)
+    Nombre de défauts: 901
+    Taux de défaut: 27.83%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 3:
+    Intervalle: [19000.000000, 35000.000000]
+    Nombre d'observations: 3,251 (9.98% du total)
+    Nombre de défauts: 1,105
+    Taux de défaut: 33.99%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: person_emp_length
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: KMeans (k=3)
+Nombre de bins: 3
+Nombre de boundaries: 2
+Chi-carré: 251.43
+P-value: 0.00000000
+Significativité: *** Très hautement significatif (p < 0.001)
+
+Statistiques descriptives:
+  • Minimum: 0.0000
+  • Maximum: 41.0000
+  • Moyenne: 4.7608
+  • Médiane: 4.0000
+  • Écart-type: 3.9812
+
+Boundaries identifiées:
+  Boundary 1: 4.407704
+  Boundary 2: 10.276356
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [0.000000, 4.407704]
+    Nombre d'observations: 18,089 (55.54% du total)
+    Nombre de défauts: 4,528
+    Taux de défaut: 25.03%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+  BIN 1:
+    Intervalle: [4.407704, 10.276356]
+    Nombre d'observations: 11,557 (35.48% du total)
+    Nombre de défauts: 2,104
+    Taux de défaut: 18.21%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 2:
+    Intervalle: [10.276356, 41.000000]
+    Nombre d'observations: 2,926 (8.98% du total)
+    Nombre de défauts: 475
+    Taux de défaut: 16.23%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: person_age
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: KMeans (k=5, fusion 1-2)
+Nombre de bins: 4
+Nombre de boundaries: 3
+Chi-carré: 31.98
+P-value: 0.00000053
+Significativité: *** Très hautement significatif (p < 0.001)
+
+Statistiques descriptives:
+  • Minimum: 20.0000
+  • Maximum: 84.0000
+  • Moyenne: 27.7160
+  • Médiane: 26.0000
+  • Écart-type: 6.1938
+
+Boundaries identifiées:
+  Boundary 1: 25.467302
+  Boundary 2: 36.729492
+  Boundary 3: 47.134892
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [20.000000, 25.467302]
+    Nombre d'observations: 15,350 (47.13% du total)
+    Nombre de défauts: 3,534
+    Taux de défaut: 23.02%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 1:
+    Intervalle: [25.467302, 36.729492]
+    Nombre d'observations: 14,311 (43.94% du total)
+    Nombre de défauts: 2,969
+    Taux de défaut: 20.75%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 2:
+    Intervalle: [36.729492, 47.134892]
+    Nombre d'observations: 2,453 (7.53% du total)
+    Nombre de défauts: 487
+    Taux de défaut: 19.85%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 3:
+    Intervalle: [47.134892, 84.000000]
+    Nombre d'observations: 458 (1.41% du total)
+    Nombre de défauts: 117
+    Taux de défaut: 25.55%
+    Niveau de risque: ÉLEVÉ
+    Commentaire: Taux de défaut supérieur à la moyenne - Risque élevé
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+VARIABLE: cb_person_cred_hist_length
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Méthode appliquée: KMeans (k=3)
+Nombre de bins: 3
+Nombre de boundaries: 2
+Chi-carré: 14.93
+P-value: 0.00057412
+Significativité: *** Très hautement significatif (p < 0.001)
+
+Statistiques descriptives:
+  • Minimum: 2.0000
+  • Maximum: 30.0000
+  • Moyenne: 5.8032
+  • Médiane: 4.0000
+  • Écart-type: 4.0520
+
+Boundaries identifiées:
+  Boundary 1: 5.663769
+  Boundary 2: 11.723404
+
+Détails par bin:
+----------------------------------------------------------------------------------------------------
+
+  BIN 0:
+    Intervalle: [2.000000, 5.663769]
+    Nombre d'observations: 19,708 (60.51% du total)
+    Nombre de défauts: 4,439
+    Taux de défaut: 22.52%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 1:
+    Intervalle: [5.663769, 11.723404]
+    Nombre d'observations: 9,868 (30.30% du total)
+    Nombre de défauts: 2,034
+    Taux de défaut: 20.61%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+  BIN 2:
+    Intervalle: [11.723404, 30.000000]
+    Nombre d'observations: 2,996 (9.20% du total)
+    Nombre de défauts: 634
+    Taux de défaut: 21.16%
+    Niveau de risque: MODÉRÉ
+    Commentaire: Taux de défaut proche de la moyenne - Risque modéré
+
+
+====================================================================================================
+TABLEAU RÉCAPITULATIF COMPARATIF
+====================================================================================================
+
+Variable                            Méthode                   Bins   Chi²         P-value     
+----------------------------------------------------------------------------------------------------
+loan_percent_income                 ChiMerge (fusion bins 0-1 et 4-5) 4      6301.67      0.00000000  
+loan_int_rate                       ChiMerge                  7      4229.36      0.00000000  
+person_income                       Monotone (fusion manuelle) 6      2691.41      0.00000000  
+loan_amnt                           Monotone (fusion bins 0-1) 4      460.67       0.00000000  
+person_emp_length                   KMeans (k=3)              3      251.43       0.00000000  
+person_age                          KMeans (k=5, fusion 1-2)  4      31.98        0.00000053  
+cb_person_cred_hist_length          KMeans (k=3)              3      14.93        0.00057412  
+
+====================================================================================================
+RECOMMANDATIONS ET CONCLUSIONS
+====================================================================================================
+
+1. QUALITÉ DE LA DISCRÉTISATION:
+   Toutes les variables présentent des Chi² significatifs (p < 0.05).
+   La méthode mixte permet d'optimiser chaque variable individuellement.
+
+2. MÉTHODES UTILISÉES:
+   • ChiMerge: Fusion intelligente pour variables avec forte corrélation
+   • MDLP: Maximisation du gain d'information avec critère d'arrêt MDL
+   • Monotone: Garantie de cohérence pour variables à relation monotone
+
+3. PROCHAINES ÉTAPES:
+   • Validation des résultats sur un ensemble de test
+   • Intégration dans un modèle de scoring
+   • Analyse de stabilité temporelle
+   • Calcul du Weight of Evidence (WoE) et Information Value (IV)
+
+4. FICHIERS GÉNÉRÉS:
+   • result/discretization_boundaries_final.json: Boundaries au format JSON
+   • datasets/credit_risk_dataset_discretized_final.csv: Dataset discrétisé complet
+   • result/discretization_summary_final.csv: Tableau récapitulatif CSV
+   • result/RAPPORT_DISCRETISATION_FINALE.txt: Ce rapport détaillé
+
+====================================================================================================
+                                   FIN DU RAPPORT
+====================================================================================================

@@ -1,0 +1,85 @@
+[
+    {
+        "variable": "loan_int_rate",
+        "method": "ChiMerge",
+        "boundaries": [
+            6.17,
+            7.88,
+            10.74,
+            13.98,
+            14.79,
+            15.58
+        ],
+        "chi2_score": 4229.357265242444,
+        "n_bins": 7,
+        "p_value": 0.0
+    },
+    {
+        "variable": "loan_percent_income",
+        "method": "ChiMerge (fusion bins 0-1 et 4-5)",
+        "boundaries": [
+            0.15,
+            0.25,
+            0.3
+        ],
+        "chi2_score": 6301.6700387608225,
+        "n_bins": 4,
+        "p_value": 0.0
+    },
+    {
+        "variable": "person_income",
+        "method": "Monotone (fusion manuelle) + Regroupement Manuel",
+        "boundaries": [
+            28590.0,
+            35000.0,
+            63000.0
+        ],
+        "chi2_score": 2691.4137675360175,
+        "n_bins": 4,
+        "p_value": 0.0
+    },
+    {
+        "variable": "loan_amnt",
+        "method": "Monotone (fusion bins 0-1)",
+        "boundaries": [
+            12000.0,
+            14500.0,
+            19000.0
+        ],
+        "chi2_score": 460.6710350814514,
+        "n_bins": 4,
+        "p_value": 1.5890258163753108e-99
+    },
+    {
+        "variable": "person_emp_length",
+        "method": "KMeans (k=3)",
+        "boundaries": [
+            4.407703800863539,
+            10.276355844735463
+        ],
+        "chi2_score": 251.42985137040498,
+        "n_bins": 3,
+        "p_value": 2.5275600479399805e-55
+    },
+    {
+        "variable": "person_age",
+        "method": "KMeans (k=5, fusion 1-2) + Regroupement Manuel",
+        "boundaries": [
+            25.467301981083345,
+            36.729492133447906
+        ],
+        "chi2_score": 31.979704123513766,
+        "n_bins": 3,
+        "p_value": 5.285265000342196e-07
+    },
+    {
+        "variable": "cb_person_cred_hist_length",
+        "method": "KMeans (k=3) + Regroupement Manuel",
+        "boundaries": [
+            5.663768914271531
+        ],
+        "chi2_score": 14.92535656493056,
+        "n_bins": 2,
+        "p_value": 0.0005741164644626994
+    }
+]
