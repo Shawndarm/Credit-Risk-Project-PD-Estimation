@@ -52,8 +52,3 @@ Arborescence du projet
 Voir le fichier `LICENSE` à la racine du dépôt.
 
 ---
-
-Si vous voulez, je peux :
-- Mettre à jour automatiquement le README.md dans le dépôt avec ce contenu (préparer le commit),
-- Générer un `requirements.txt` à partir de `pyproject.toml`,
-- Ajouter un exemple de notebook montrant la discrétisation et la sélection étape par étape.
